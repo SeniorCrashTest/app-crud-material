@@ -1,1 +1,44 @@
-<p>dialog works!</p>
+<h1 mat-dialog-title>Форма добавления товара</h1>
+
+<div mat-dialog-content>
+
+	<mat-form-field appearance="outline">
+		<mat-label>Наименование товара</mat-label>
+		<input matInput placeholder="Введите название товара">
+	</mat-form-field>
+
+	<mat-form-field appearance="outline">
+		<mat-label>Категория товара</mat-label>
+		<mat-select placeholder="Выберите категорию товара">
+			<mat-option value="Компьютеры">Компьютеры</mat-option>
+			<mat-option value="Ноутбуки">Ноутбуки</mat-option>
+			<mat-option value="Планшеты">Планшеты</mat-option>
+			<mat-option value="Мониторы">Мониторы</mat-option>
+			<mat-option value="Серверы">Серверы</mat-option>
+			<mat-option value="Акустика">Акустика</mat-option>
+			<mat-option value="Оргтехника">Оргтехника</mat-option>
+		</mat-select>
+	</mat-form-field>
+
+	<mat-form-field appearance="outline">
+		<mat-label>Choose a date</mat-label>
+		<input matInput [matDatepicker]="picker">
+		<mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+		<mat-datepicker #picker></mat-datepicker>
+	</mat-form-field>
+
+	<label id="example-radio-group-label">
+		<h2>Состояние товара</h2>
+	</label>
+	<mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group">
+		<mat-radio-button class="example-radio-button" *ngFor="let el of productConditionList" [value]="el">
+			{{el}}
+		</mat-radio-button>
+	</mat-radio-group>
+
+	<mat-form-field appearance="outline">
+		<mat-label>Цена, $</mat-label>
+		<input type="text">
+	</mat-form-field>
+
+	</div>
