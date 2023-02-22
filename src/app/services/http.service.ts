@@ -1,9 +1,18 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HttpService {
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
+
+	createData(data: any) {
+		return this.httpClient.post('http://localhost:3000/productList', data)
+	}
+
+	readData() {
+		return this.httpClient.get('http://localhost:3000/productList')
+	}
 }

@@ -1,5 +1,31 @@
 {
-  "posts": [{ "id": 1, "title": "json-server", "author": "typicode" }],
-  "comments": [{ "id": 1, "body": "some comment", "postId": 1 }],
-  "profile": { "name": "typicode" }
+  "productList": [
+    {
+      "name": "HP-envy",
+      "category": "Ноутбуки",
+      "productCondition": "Новый",
+      "price": 3454,
+      "comment": "Подробное описание товара",
+      "date": "2023-02-22T22:00:00.000Z",
+      "id": 1
+    },
+    {
+      "name": "HP-17",
+      "category": "Ноутбуки",
+      "productCondition": "Новый",
+      "price": 1234,
+      "comment": "Описание товара",
+      "date": "2023-02-22T22:00:00.000Z",
+      "id": 2
+    },
+    {
+      "name": "Asus",
+      "category": "Ноутбуки",
+      "productCondition": "Новый",
+      "price": 4322,
+      "comment": "Хороший ноутбук",
+      "date": "2023-02-23T22:00:00.000Z",
+      "id": 3
+    }
+  ]
 }
