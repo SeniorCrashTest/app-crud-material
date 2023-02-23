@@ -15,4 +15,12 @@ export class HttpService {
 	readData() {
 		return this.httpClient.get('http://localhost:3000/productList')
 	}
+
+	updateData(data: any, id: number) {
+		return this.httpClient.put(`http://localhost:3000/productList/${id}`, data)
+	}
+
+	deleteData(id: number) {
+		return this.httpClient.delete(`http://localhost:3000/productList/${id}`)
+	}
 }

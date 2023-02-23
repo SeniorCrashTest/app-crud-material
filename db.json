@@ -14,7 +14,7 @@
       "category": "Ноутбуки",
       "productCondition": "Новый",
       "price": 1234,
-      "comment": "Описание товара",
+      "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut possimus consequatur ratione eos numquam corporis nulla, sunt nemo, non pariatur, animi amet? Quo fugiat soluta, explicabo vel dolores voluptatem, similique ducimus id temporibus provident possimus reiciendis ipsum facere adipisci accusantium incidunt officia sint numquam laborum reprehenderit dicta recusandae autem.",
       "date": "2023-02-22T22:00:00.000Z",
       "id": 2
     },
@@ -26,6 +26,15 @@
       "comment": "Хороший ноутбук",
       "date": "2023-02-23T22:00:00.000Z",
       "id": 3
+    },
+    {
+      "name": "Леново",
+      "category": "Ноутбуки",
+      "productCondition": "Новый",
+      "price": 5555,
+      "comment": "Плохой ноутбук",
+      "date": "2023-02-27T22:00:00.000Z",
+      "id": 4
     }
   ]
 }
