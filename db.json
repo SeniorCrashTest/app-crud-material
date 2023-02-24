@@ -1,15 +1,6 @@
 {
   "productList": [
     {
-      "name": "HP-envy",
-      "category": "Ноутбуки",
-      "productCondition": "Новый",
-      "price": 3454,
-      "comment": "Подробное описание товара",
-      "date": "2023-02-22T22:00:00.000Z",
-      "id": 1
-    },
-    {
       "name": "HP-17",
       "category": "Ноутбуки",
       "productCondition": "Новый",

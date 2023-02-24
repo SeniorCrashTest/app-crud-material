@@ -48,6 +48,28 @@ export class AppComponent implements OnInit {
 	createProduct(): void {
 			this.dialog.open(DialogComponent, {
 			width: '30%'
+		}).afterClosed().subscribe(res => {
+			console.log(res);
 		});
 	}
+
+	updateProduct(row: any): void {
+		this.dialog.open(DialogComponent, {
+			width: '30%',
+			data: row
+		}).afterClosed().subscribe(res => {
+			console.log(res);
+		});
+	}
+
+	deleteProduct(id: number): void {
+		this.http.deleteData(id).subscribe({
+			next: res => {
+				console.log('Delete succsesfully')
+				this.fetchData()
+			},
+			error: err => console.log(err)
+		});
+	}
+
 }
