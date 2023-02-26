@@ -6,7 +6,7 @@
       "productCondition": "Новый",
       "price": 1234,
       "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut possimus consequatur ratione eos numquam corporis nulla, sunt nemo, non pariatur, animi amet? Quo fugiat soluta, explicabo vel dolores voluptatem, similique ducimus id temporibus provident possimus reiciendis ipsum facere adipisci accusantium incidunt officia sint numquam laborum reprehenderit dicta recusandae autem.",
-      "date": "2023-02-22T22:00:00.000Z",
+      "date": "2023-02-27T22:00:00.000Z",
       "id": 2
     },
     {
@@ -26,6 +26,78 @@
       "comment": "Плохой ноутбук",
       "date": "2023-02-27T22:00:00.000Z",
       "id": 4
+    },
+    {
+      "name": "Apple",
+      "category": "Ноутбуки",
+      "productCondition": "Новый",
+      "price": 6100,
+      "comment": "Макбук",
+      "date": "2023-03-04T22:00:00.000Z",
+      "id": 5
+    },
+    {
+      "name": "Асук Aspire",
+      "category": "Ноутбуки",
+      "productCondition": "Новый",
+      "price": 3333,
+      "comment": "Ноутбук в отличном состоянии",
+      "date": "2023-03-11T22:00:00.000Z",
+      "id": 6
+    },
+    {
+      "name": "Асук Aspire 2",
+      "category": "Ноутбуки",
+      "productCondition": "Новый",
+      "price": 3333,
+      "comment": "Ноутбук в отличном состоянии",
+      "date": "2023-03-11T22:00:00.000Z",
+      "id": 7
+    },
+    {
+      "name": "Асук Aspire 3",
+      "category": "Ноутбуки",
+      "productCondition": "Новый",
+      "price": 3333,
+      "comment": "Ноутбук в отличном состоянии",
+      "date": "2023-03-11T22:00:00.000Z",
+      "id": 8
+    },
+    {
+      "name": "Асук Aspire 4",
+      "category": "Ноутбуки",
+      "productCondition": "Новый",
+      "price": 3333,
+      "comment": "Ноутбук в отличном состоянии",
+      "date": "2023-03-11T22:00:00.000Z",
+      "id": 9
+    },
+    {
+      "name": "Асук Aspire 5",
+      "category": "Ноутбуки",
+      "productCondition": "Новый",
+      "price": 3333,
+      "comment": "Ноутбук в отличном состоянии",
+      "date": "2023-03-11T22:00:00.000Z",
+      "id": 10
+    },
+    {
+      "name": "Асук Aspire 6",
+      "category": "Ноутбуки",
+      "productCondition": "Новый",
+      "price": 3333,
+      "comment": "Ноутбук в отличном состоянии",
+      "date": "2023-03-11T22:00:00.000Z",
+      "id": 11
+    },
+    {
+      "name": "Асук Aspire 7",
+      "category": "Ноутбуки",
+      "productCondition": "Новый",
+      "price": 3333,
+      "comment": "Ноутбук в отличном состоянии",
+      "date": "2023-03-11T22:00:00.000Z",
+      "id": 12
     }
   ]
 }

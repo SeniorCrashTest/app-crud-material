@@ -52,7 +52,8 @@
 
 	<div [align]="'end'" mat-dialog-actions>
 		<button mat-dialog-close="" mat-raised-button>Отмена</button>
-		<button (click)="addProduct()" [disabled]="form.invalid" color="accent" mat-raised-button>Сохранить</button>
+		<button (click)="editData ? updateProduct() : addProduct()" [disabled]="form.invalid" color="accent"
+			mat-raised-button>{{editData ? 'Изменить' : 'Сохранить'}}</button>
 	</div>
 	</form>
 

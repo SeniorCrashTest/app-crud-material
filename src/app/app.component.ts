@@ -50,6 +50,7 @@ export class AppComponent implements OnInit {
 			width: '30%'
 		}).afterClosed().subscribe(res => {
 			console.log(res);
+			this.fetchData();
 		});
 	}
 
@@ -59,6 +60,7 @@ export class AppComponent implements OnInit {
 			data: row
 		}).afterClosed().subscribe(res => {
 			console.log(res);
+			this.fetchData();
 		});
 	}
 

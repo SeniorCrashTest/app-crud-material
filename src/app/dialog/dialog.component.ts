@@ -16,22 +16,36 @@ export class DialogComponent implements OnInit {
 	constructor(private fb: FormBuilder, private http: HttpService, private dialogRef: MatDialogRef<DialogComponent>, @Inject(MAT_DIALOG_DATA) public editData: any) {}
 
   ngOnInit(): void {
-		this.initializeForm();
+		this.initializeForm()
 	}
 
   addProduct(): void {
 		if(this.form.invalid) return
 
-		this.http.createData(this.form.value).subscribe({
+		this.http.createData(this.form.value)
+		.subscribe({
 			next: res => {
-				console.log(res);
-				this.form.reset()
+				console.log('Added product:', res);
+				this.form.reset();
 				this.dialogRef.close('create');
 			},
 			error: err => console.log(err)
 		})
 	}
 
+  updateProduct(): void {
+		if(this.form.invalid) return
+
+		this.http.updateData(this.form.value, this.editData.id)
+		.subscribe({
+			next: res => {
+				console.log('Updated product:', res);
+				this.form.reset()
+				this.dialogRef.close('updated');
+			},
+			error: err => console.log(err)
+		})
+	}
 
 	private initializeForm(): void {
 		this.form = this.fb.group({
