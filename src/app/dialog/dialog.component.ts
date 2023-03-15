@@ -3,26 +3,29 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { HttpService } from '../services/http.service';
 
-@Component({
-  selector: 'app-dialog',
-  templateUrl: './dialog.component.html',
-  styleUrls: ['./dialog.component.scss']
-})
+
+	@Component({
+		selector: 'app-dialog',
+		templateUrl: './dialog.component.html',
+		styleUrls: ['./dialog.component.scss']
+	})
+
 export class DialogComponent implements OnInit {
 
   productConditionList = ['Новый', 'Б/у', 'После ремонта'];
   form!: FormGroup;
 	
-	constructor(private fb: FormBuilder, private http: HttpService, private dialogRef: MatDialogRef<DialogComponent>, @Inject(MAT_DIALOG_DATA) public editData: any) {}
+	constructor(private fb: FormBuilder, private httpService: HttpService, private dialogRef: MatDialogRef<DialogComponent>, @Inject(MAT_DIALOG_DATA) public editData: any) {}
 
   ngOnInit(): void {
 		this.initializeForm()
+		this.httpService.getData()
 	}
 
   addProduct(): void {
 		if(this.form.invalid) return
 
-		this.http.createData(this.form.value)
+		this.httpService.createData(this.form.value)
 		.subscribe({
 			next: res => {
 				console.log('Added product:', res);
@@ -36,7 +39,7 @@ export class DialogComponent implements OnInit {
   updateProduct(): void {
 		if(this.form.invalid) return
 
-		this.http.updateData(this.form.value, this.editData.id)
+		this.httpService.updateData(this.form.value, this.editData.id)
 		.subscribe({
 			next: res => {
 				console.log('Updated product:', res);

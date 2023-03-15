@@ -22,11 +22,11 @@ export class AppComponent implements OnInit {
 	constructor(private dialog: MatDialog, private http: HttpService) {}
 
 	ngOnInit(): void {
-		this.fetchData()
+		this.getData()
 	}
 
-	private fetchData(): void {
-		this.http.readData().subscribe({
+	private getData(): void {
+		this.http.getData().subscribe({
 			next: (res: any) => {
 				this.dataSource = new MatTableDataSource(res);
 				this.dataSource.paginator = this.paginator;
@@ -49,7 +49,7 @@ export class AppComponent implements OnInit {
 			width: '30%'
 		}).afterClosed().subscribe(res => {
 			console.log(res);
-			this.fetchData();
+			this.getData();
 		});
 	}
 
@@ -59,15 +59,15 @@ export class AppComponent implements OnInit {
 			data: row
 		}).afterClosed().subscribe(res => {
 			console.log(res);
-			this.fetchData();
+			this.getData();
 		});
 	}
 
-	deleteProduct(id: number): void {
+	deleteProduct(id: string): void {
 		this.http.deleteData(id).subscribe({
 			next: res => {
 				console.log('Delete succsesfully')
-				this.fetchData()
+				this.getData()
 			},
 			error: err => console.log(err)
 		});

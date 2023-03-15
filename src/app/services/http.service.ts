@@ -1,26 +1,48 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ProductInterface } from '../types/product.interface';
+import { map } from 'rxjs/operators';
+
+const url = 'https://app-crud-material-fbcab-default-rtdb.firebaseio.com/productlist'
 
 @Injectable({
   providedIn: 'root'
 })
 export class HttpService {
 
-  constructor(private httpClient: HttpClient) { }
+	products: ProductInterface[] = [];
 
-	createData(data: any) {
-		return this.httpClient.post('http://localhost:3000/productList', data)
+  constructor(private http: HttpClient) { }
+	
+//CREATE------------------------------------------
+	createData(product: ProductInterface) {
+		return this.http.post<ProductInterface>(`${url}.json`, product);
 	}
+	
+//READ--------------------------------------------
+getData() {
+  return this.http.get<{ [key: string]: ProductInterface }>(`${url}.json`)
+    .pipe(
+      map(responseData => {
+        const productsArray: ProductInterface[] = [];
+        for (const key in responseData) {
+          if (responseData.hasOwnProperty(key)) {
+            productsArray.push({ ...responseData[key], id: key });
+          }
+        }
+        return productsArray;
+      })
+    );
+}
 
-	readData() {
-		return this.httpClient.get('http://localhost:3000/productList')
+//UPDATE--------------------------------------------
+updateData(product: ProductInterface, id: string  ) {
+	return this.http.put(`${url}/${product.key}.json`, product.key)
+}
+	
+	//DELETE------------------------------------------
+	deleteData(id: string) {
+		return this.http.delete(`${url}/${id}.json`);
 	}
-
-	updateData(data: any, id: number) {
-		return this.httpClient.put(`http://localhost:3000/productList/${id}`, data)
-	}
-
-	deleteData(id: number) {
-		return this.httpClient.delete(`http://localhost:3000/productList/${id}`)
-	}
+	
 }
