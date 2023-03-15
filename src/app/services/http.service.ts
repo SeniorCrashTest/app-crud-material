@@ -36,9 +36,10 @@ getData() {
 }
 
 //UPDATE--------------------------------------------
-updateData(product: ProductInterface, id: string  ) {
-	return this.http.put(`${url}/${product.key}.json`, product.key)
+updateData(product: ProductInterface, id: string) {
+  return this.http.put(`${url}/${id}.json`, product);
 }
+
 	
 	//DELETE------------------------------------------
 	deleteData(id: string) {
